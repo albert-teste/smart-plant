@@ -1,0 +1,444 @@
+[
+    {
+        "id": "eb61b28bc362a5bd",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ae6e50fb3186d596",
+        "type": "arduino-board",
+        "device": "COM3"
+    },
+    {
+        "id": "5c35d3012e4dc666",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "sprout",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "2077b98e7e5570c4",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#428500",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#035054",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "true",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 20,
+                "cx": 6,
+                "cy": 20,
+                "px": 25,
+                "py": 25
+            }
+        }
+    },
+    {
+        "id": "c1081ffb3cf9b6b3",
+        "type": "ui_group",
+        "name": "Smart Plant",
+        "tab": "5c35d3012e4dc666",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": "text-center"
+    },
+    {
+        "id": "66284734d7df1ea1",
+        "type": "inject",
+        "z": "eb61b28bc362a5bd",
+        "name": "PUMP ON",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 120,
+        "y": 320,
+        "wires": [
+            [
+                "1dd52ac1d9ca3b86"
+            ]
+        ]
+    },
+    {
+        "id": "f17623c5eac30389",
+        "type": "arduino out",
+        "z": "eb61b28bc362a5bd",
+        "name": "PUMP",
+        "pin": "7",
+        "state": "OUTPUT",
+        "arduino": "ae6e50fb3186d596",
+        "x": 650,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "469051668c8b9cfd",
+        "type": "inject",
+        "z": "eb61b28bc362a5bd",
+        "name": "LAMP ON",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 120,
+        "y": 40,
+        "wires": [
+            [
+                "93d4c9f2e5832fc7"
+            ]
+        ]
+    },
+    {
+        "id": "ab9a14bd7d9edd90",
+        "type": "arduino out",
+        "z": "eb61b28bc362a5bd",
+        "name": "LAMP",
+        "pin": "8",
+        "state": "OUTPUT",
+        "arduino": "ae6e50fb3186d596",
+        "x": 530,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "2939a47a5353fde2",
+        "type": "inject",
+        "z": "eb61b28bc362a5bd",
+        "name": "LAMP OFF",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 120,
+        "y": 120,
+        "wires": [
+            [
+                "93d4c9f2e5832fc7"
+            ]
+        ]
+    },
+    {
+        "id": "ad16849f73e2a398",
+        "type": "arduino in",
+        "z": "eb61b28bc362a5bd",
+        "name": "SENS",
+        "pin": "0",
+        "state": "ANALOG",
+        "arduino": "ae6e50fb3186d596",
+        "x": 100,
+        "y": 200,
+        "wires": [
+            [
+                "847199b4002cc605"
+            ]
+        ]
+    },
+    {
+        "id": "a3f9c48323739cc6",
+        "type": "debug",
+        "z": "eb61b28bc362a5bd",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "aa98eca759dfcc7c",
+        "type": "ui_gauge",
+        "z": "eb61b28bc362a5bd",
+        "name": "MEDIDOR",
+        "group": "c1081ffb3cf9b6b3",
+        "order": 2,
+        "width": "6",
+        "height": "4",
+        "gtype": "gage",
+        "title": "UMIDADE",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#c2ceff",
+            "#6670ff",
+            "#0f1fff"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 590,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "847199b4002cc605",
+        "type": "delay",
+        "z": "eb61b28bc362a5bd",
+        "name": "delay",
+        "pauseType": "timed",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 250,
+        "y": 200,
+        "wires": [
+            [
+                "4eb738c2312846a9"
+            ]
+        ]
+    },
+    {
+        "id": "93d4c9f2e5832fc7",
+        "type": "ui_switch",
+        "z": "eb61b28bc362a5bd",
+        "name": "switch_LAMP",
+        "label": "Ligar Lâmpada",
+        "tooltip": "",
+        "group": "c1081ffb3cf9b6b3",
+        "order": 1,
+        "width": "6",
+        "height": "1",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "false",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "true",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 340,
+        "y": 80,
+        "wires": [
+            [
+                "ab9a14bd7d9edd90"
+            ]
+        ]
+    },
+    {
+        "id": "1dd52ac1d9ca3b86",
+        "type": "ui_button",
+        "z": "eb61b28bc362a5bd",
+        "name": "btn_IRRIGAR",
+        "group": "c1081ffb3cf9b6b3",
+        "order": 3,
+        "width": "6",
+        "height": "1",
+        "passthru": false,
+        "label": "IRRIGAR",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "grain",
+        "payload": "false",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 300,
+        "y": 320,
+        "wires": [
+            [
+                "5601824a9f6138ec"
+            ]
+        ]
+    },
+    {
+        "id": "5601824a9f6138ec",
+        "type": "function",
+        "z": "eb61b28bc362a5bd",
+        "name": "",
+        "func": "function sleep(ms) {\n  return new Promise(resolve => setTimeout(resolve, ms));\n}\n\nnode.send(msg);\nawait sleep(2000);\nmsg.payload = true;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 320,
+        "wires": [
+            [
+                "f17623c5eac30389",
+                "853a68bddb9d0f8a"
+            ]
+        ]
+    },
+    {
+        "id": "853a68bddb9d0f8a",
+        "type": "debug",
+        "z": "eb61b28bc362a5bd",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "4eb738c2312846a9",
+        "type": "function",
+        "z": "eb61b28bc362a5bd",
+        "name": "",
+        "func": "msg.payload =  Math.round(((msg.payload/1200 * 100) -100) *-1) + '%';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 200,
+        "wires": [
+            [
+                "aa98eca759dfcc7c",
+                "a3f9c48323739cc6"
+            ]
+        ]
+    }
+]
